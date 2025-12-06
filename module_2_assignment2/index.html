@@ -1,0 +1,46 @@
+<!--Problem Statement:
+You work in XYZ Company as a Front End Developer. The company officials want you to build a web application that allows users to add todo on the application
+
+Tasks to be performed:
+
+1.	Create an HTML page with basic HTML skeleton
+2.	Add React, ReactDOM, Babel and PropTypes as script tags
+3.	Add script tag with babel jsx code in it
+4.	Create a HelpFrom component tahat renders an imput and a paragraph that dispalys what user has typed in the form.
+5.	Use state to keep track of form value -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React Assignment2</title>
+</head>
+<body>
+    <div id="root"></div>
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <script src="https://unpkg.com/prop-types/prop-types.js"></script>
+
+    <script type="text/babel">
+    
+    function HelpForm(){
+        const [text, setText] = React.useState("");
+        return(
+        <div>
+            <h2>Add ToDo</h2>
+            <input type="text" placeholder="type here..."
+            onChange={(e) => setText(e.target.value)} />
+             
+            <p>you type: {text}</p>
+        </div>
+    );
+    }
+    ReactDOM.createRoot(document.getElementById("root")).render(<HelpForm />)
+    </script>
+    
+</body>
+</html>
+
+
